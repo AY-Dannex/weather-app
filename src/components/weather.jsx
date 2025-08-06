@@ -10,6 +10,7 @@ import location from '../assets/location.png'
 import humidityIcon from '../assets/humidity.png'
 import windIcon from '../assets/wind.png'
 import pressureIcon from '../assets/pressure.png'
+import weatherIcon from '../assets/weather icon.svg'
 
 function Weather() {
   const [city, setCity] = useState("")
@@ -118,7 +119,7 @@ function Weather() {
       </div>) : 
       (
         <div className="text-center">
-          <img src="/public/weather icon.svg" alt="weather icon" className="w-50 mx-auto"/>
+          <img src={weatherIcon} alt="weather icon" className="w-50 mx-auto"/>
           <h1 className="text-white text-3xl pb-4 font-bold">Welcome to skycast</h1>
           <p className="text-white">Search for any city to get current weather forecast</p>
         </div>
