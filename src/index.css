@@ -13,9 +13,7 @@
     background-size: cover;
     background-color: #292929;
     background-blend-mode: overlay;
-    display: grid;
-    place-items: center;
-    padding: 10px;
+    padding-top: 30px;
 }
 
 .skeleton{
