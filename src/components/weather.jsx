@@ -11,6 +11,7 @@ import humidityIcon from '../assets/humidity.png'
 import windIcon from '../assets/wind.png'
 import pressureIcon from '../assets/pressure.png'
 import weatherIcon from '../assets/weather icon.svg'
+import notFound from '../assets/not-found.png'
 
 function Weather() {
   const [city, setCity] = useState("")
@@ -27,6 +28,8 @@ function Weather() {
   const [icon, setIcon] = useState("")
 
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
+  const [networkError, setNetworkError] = useState(false)
 
   const API_KEY = "d0c5cdce71ec8d1203cff6fd6c267853"
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
@@ -37,6 +40,8 @@ function Weather() {
 
   const fetchWeather = async () => {
     setLoading(true)
+    setError(false)
+    setNetworkError(false)
     try{
       const response = await fetch(API_URL)
       const data = await response.json()
@@ -44,10 +49,12 @@ function Weather() {
       if (response.ok){
         setWeather(data)
       }else{
-        alert(data.message)
+        setError(true)
+        setWeather(null)
       }
     }catch(error){
-      alert("Network error: "+ error.message)
+      console.log("Network error: "+ error.message)
+      setNetworkError(true)
     }finally{
       setLoading(false)
     }
@@ -122,14 +129,24 @@ function Weather() {
             <p className="text-[12px] text-white font-bold">{wind}</p>
           </div>
         </div>
-      </div>) : 
-      (
+      </div>) : error ? (
+        <div className="text-center py-5">
+          <img src={notFound} alt="" className="w-30 mx-auto invert" />
+          <p className="text-white text-lg font-semibold py-6">City not found. Please try again.</p>
+        </div>
+      ) : networkError ? (
+          <div className="text-center py-5">
+            <img src={notFound} alt="" className="w-30 mx-auto invert" />
+            <p className="text-white text-lg font-semibold py-6">Network Error. Please check your connection and try again.</p>
+        </div>
+      ) : (
         <div className="text-center">
           <img src={weatherIcon} alt="weather icon" className="w-50 mx-auto"/>
           <h1 className="text-white text-3xl pb-4 font-bold">Welcome to skycast</h1>
           <p className="text-white">Search for any city to get current weather forecast</p>
         </div>
       )
+
       }
     </div>
   )
