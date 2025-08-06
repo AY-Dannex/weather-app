@@ -55,6 +55,7 @@ function Weather() {
     }catch(error){
       console.log("Network error: "+ error.message)
       setNetworkError(true)
+      setWeather(null)
     }finally{
       setLoading(false)
     }
