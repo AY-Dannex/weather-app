@@ -77,7 +77,7 @@ function Weather() {
       setIcon(clearSky)
     }else if(condition.toLowerCase() === "broken clouds"){
       setIcon(broken)
-    }else if(condition.toLowerCase() === "overcast clouds"){
+    }else if(condition.toLowerCase() === "overcast clouds" || condition.toLowerCase() === "thunderstorm" || condition.toLowerCase() === "light rain"){
       setIcon(overcast)
     }else if(condition.toLowerCase() === "haze"){
       setIcon(haze)
