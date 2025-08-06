@@ -81,7 +81,7 @@ function Weather() {
   }, [weather, condition])
 
   return(
-    <div className="max-w-90  h-100 rounded-2xl mx-auto p-3 backdrop-blur-sm bg-white/5">
+    <div className="max-w-85  h-100 rounded-2xl mx-auto p-3 backdrop-blur-sm bg-white/5">
       <div className="w-100% flex bg-white/3 justify-between rounded-full py-2 px-5">
         <input type="text" value={city} onChange={(e) => handleCity(e)} placeholder="Search City" className="w-4/5 outline-none text-white"/>
         <button onClick={fetchWeather}><img src={search} alt="" className="w-7 invert cursor-pointer"/></button>
