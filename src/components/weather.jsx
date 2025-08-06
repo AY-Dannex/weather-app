@@ -26,7 +26,7 @@ function Weather() {
   const [condition, setCondition] = useState("")
   const [icon, setIcon] = useState("")
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   const API_KEY = "d0c5cdce71ec8d1203cff6fd6c267853"
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
