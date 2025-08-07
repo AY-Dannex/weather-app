@@ -116,7 +116,7 @@ function Weather() {
             <p className="text-white">High: {tempMax} &nbsp; Low: {tempMin}</p>
           </div>
         </div>
-        <div className="flex w-full justify-between gap-5">
+        <div className="flex flex-row w-fulljustify-between gap-5">
           <div className="grow basis-5 flex-col text-center bg-white/10 rounded-xl p-1 gap-5">
             <img src={humidityIcon} alt="" className=" invert w-10 h-10 mx-auto mb-2" />
             <p className="text-[12px] text-white font-bold">{humidity}</p>
