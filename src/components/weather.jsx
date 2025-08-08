@@ -123,7 +123,7 @@ function Weather() {
         setIcon(thunderStorm)
       }else if(condition.toLowerCase() === "haze"){
         setIcon(haze)
-      }else if(condition.toLowerCase() === "light rain"){
+      }else if(condition.toLowerCase() === "light rain" || condition.toLowerCase() === "moderate rain"){
         setIcon(lightRain)
       }else if(condition.toLowerCase() === "cloud"){
         setIcon(cloud)
@@ -141,7 +141,7 @@ function Weather() {
         <button onClick={fetchWeather}><img src={search} alt="" className="w-7 invert cursor-pointer"/></button>
         {
           suggestion.length !== 0 && city.trim() !== "" && (
-            <div className="absolute bg-white/80 backdrop-blur-lg top-[100%] w-70 rounded z-1">
+            <div className="absolute bg-white/95 backdrop-blur-[10px] top-[100%] w-70 rounded z-1">
             <ul className="flex flex-col ">
               {suggestions}
             </ul>
