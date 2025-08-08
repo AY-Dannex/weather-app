@@ -5,8 +5,7 @@
 
 .container{
     max-width: 100%;
-    height: 101vh;
-    background-image: url('/public/background.jpg');
+    height: 100vh;
     background-position: center;
     background-attachment: fixed;
     background-repeat: repeat;
@@ -42,9 +41,16 @@
     opacity: 0.2;
     z-index: 2;
     animation-name: move;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+}
+
+.load{
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 @keyframes move{
@@ -59,4 +65,11 @@
     }
 }
 
- 
+@keyframes spin{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
