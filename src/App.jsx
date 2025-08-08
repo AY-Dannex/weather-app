@@ -10,7 +10,7 @@ function App() {
     const img = new Image()
     img.src = background
     img.onload = () => {
-      // setImgLoaded(true)/
+      setImgLoaded(true)
     }
   }, [])
   return (
