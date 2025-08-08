@@ -2,7 +2,7 @@
 function SkeletonLoader() {
   return (
     <div className="skeleton w-70 h-full  px-2">
-      <div className="title my-4 h-8 w-40"></div>
+      <div className="text my-4 h-8 w-40"></div>
       <div className="flex gap-5 justify-between align-center">
         <div className="text w-27 h-22"></div>
         <div className="flex  flex-col gap-1.5">
